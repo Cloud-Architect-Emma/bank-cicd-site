@@ -1,35 +1,20 @@
-name: CI/CD Static Bank Site
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Upload site as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: ./
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build site (optional for static site)
-      run: npm run build || echo "No build step needed for static site"
-
-    - name: Test (optional)
-      run: npm run test || echo "No tests defined"
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./   # your static site root folder

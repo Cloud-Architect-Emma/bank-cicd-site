@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-site-deployment
+  labels:
+    app: bank-site
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bank-site
+  template:
+    metadata:
+      labels:
+        app: bank-site
+    spec:
+      containers:
+        - name: bank-site
+          image: emma2323/bank-cicd-site:latest 
+          ports:
+            - containerPort: 80
