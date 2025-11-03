@@ -9,7 +9,7 @@
 [![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)](https://grafana.com/)
 
 ## Overview
-This project demonstrates a complete DevOps CI/CD pipeline for a static banking website built with HTML, CSS, and JavaScript. It simulates real-world DevOps challenges by automating the build, test, deployment, and monitoring processes. The pipeline ensures portability, scalability, reliability, and rapid iteration—key for modern web applications.
+This project demonstrates a complete DevOps CI/CD pipeline for a static banking website built with HTML, CSS, and JavaScript. It simulates real-world DevOps challenges by automating the build, test, deployment, and monitoring processes. The pipeline ensures portability, scalability, reliability, and rapid iteration, key for modern web applications.
 
 Key DevOps Problems Solved
 Containerization (Docker): Solves environment inconsistencies and "works on my machine" issues by packaging the app into portable containers, enabling seamless deployment across dev, staging, and production.
@@ -27,20 +27,9 @@ Helm Packaging: Manage and deploy via Helm charts.
 GitHub Actions CI/CD: Automate builds, tests, and deployments.
 Prometheus & Grafana Monitoring: Observe and visualize metrics.
 
-## Architecture Diagram
-graph TD
-    A[Clone Repo] --> B[Dockerize App]
-    B --> C[Kubernetes Deployment]
-    C --> D[Helm Packaging]
-    D --> E[GitHub Actions CI/CD]
-    E --> F[Prometheus & Grafana Monitoring]
-    
-    style A fill:#e1f5fe
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-    style E fill:#f3e5f5
-    style F fill:#e8f5e8
+## Architecture
+
+![Architecture Diagram](architecture/Architecture-Diagram.JPG)
 
 ## Tech Stack
 Frontend: HTML, CSS, JavaScript, Bootstrap
