@@ -1,0 +1,10 @@
+# Ignore system and user files
+**/AppData
+**/node_modules
+**/.git
+**/.DS_Store
+**/venv
+**/build
+**/dist
+**/*.log
+**/*.tmp

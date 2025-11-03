@@ -1,0 +1,7 @@
+image:
+  repository: emma2323/bank-site
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: dockerhub-secret

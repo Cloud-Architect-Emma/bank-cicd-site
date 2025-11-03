@@ -14,8 +14,18 @@ spec:
       labels:
         app: bank-site
     spec:
-      containers:
-        - name: bank-site
-          image: emma2323/bank-cicd-site:latest 
-          ports:
-            - containerPort: 90
+  containers:
+  - name: bank-site
+    image: emma2323/bank-site:latest  # Updated image
+    ports:
+    - containerPort: 90
+      name: http
+    - containerPort: 9113
+      name: metrics
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
